@@ -1,0 +1,37 @@
+// Global stylesheet where import all other stylesheets 
+
+// Variable
+@import '../../scss/variables/variables';
+
+// Mixins
+@import "../../scss/mixins/mixins";
+
+// Fonts
+@import "../../scss/fonts/fonts";
+
+// Element Fonts
+@import "../../scss/variables/font-elements";
+
+// Base
+@import "../../scss/base/base"; 
+
+// Shared
+@import "../../scss/shared/shared";
+
+// Single book
+@import "../../scss/shared/book";
+
+// Poster book
+@import "../../scss/shared/poster";
+
+// Pages 
+@import "../../scss/pages/problems";
+@import "../../scss/pages/what-is";
+
+// Components
+@import "../../scss/components/components";
+
+
+// height services and portfolio
+// acheel links w logo footer
+// apply for m7tag ytzbt

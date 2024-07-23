@@ -1,0 +1,119 @@
+// Minxins
+@mixin ease {
+  transition: all 0.4s ease;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin cubic-bezier {
+  // transition: all 0.5s cubic-bezier(.42,.97,.52,1.49);
+  // transition: all 0.7s cubic-bezier(.5,-.75,.7,2);
+  transition: all 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+@mixin imageBackground($url) {
+  background-image: url(#{$url});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@mixin customLine {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  @include ease;
+
+  &:after {
+    content: "";
+    position: absolute;
+    @include ease;
+    background-color: currentColor;
+  }
+  &:after {
+    z-index: 5;
+    width: 40%;
+    height: 3px;
+    left: 0;
+    bottom: -8px;
+    border-radius: 10px;
+    // z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    [dir="rtl"] & {
+      transform-origin: right;
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: currentColor;
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &.active {
+    pointer-events: none;
+
+    &::after {
+      transform: scaleX(1);
+      transform-origin: right;
+    }
+    &::before {
+      transform: rotate(180deg) scaleY(1);
+    }
+  }
+}
+
+
+
+@mixin overlay($bg-color) {
+  position: relative;
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: $bg-color;
+  }
+}
+
+@mixin css3-prefix($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+/* SCSS */
+// div {
+//     @include css3-prefix(transform, scale3d(2.5, 2, 1.5));
+//  }
+
+/* SCSS */
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* SCSS */
+// div {
+//     @include vertical-center();
+//  }

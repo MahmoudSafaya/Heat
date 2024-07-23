@@ -1,0 +1,260 @@
+.what-is_page,
+.cause-of-PCOS_page {
+    .img-container {
+        .play-icon {
+            top: calc(50% - 28px);
+            left: -50px;
+            width: 56px;
+            height: 56px;
+
+            @media screen and (max-width: 767px) {
+                left: -25px
+            }
+
+            img {
+                cursor: pointer;
+            }
+
+            .text {
+                top: 0;
+                right: -0.95rem;
+                top: -35px;
+                height: 25px;
+                font-size: 1.2rem;
+
+                &:after {
+                    bottom: -4px;
+                    right: calc(50% - 5px);
+                }
+            }
+
+            @media screen and (max-width: 500px) {
+                left: -25px !important;
+            }
+        }
+    }
+}
+
+// img container
+.what-is_page,
+.cysts_page,
+.polycystic_page,
+.cause-of-PCOS_page {
+    .img-container {
+        position: relative;
+
+        .play-icon {
+            position: absolute;
+        }
+    }
+
+    .img-container .text,
+    .play-icon .text {
+        position: absolute;
+        font-size: 12px !important;
+        top: 0;
+        background-color: $primary-color-dark;
+        color: white;
+        min-width: max-content;
+        border-radius: 10px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: $primary-color-dark;
+            transform: rotate(45deg);
+            border-radius: 2px;
+        }
+    }
+}
+
+
+.single-page {
+    position: relative;
+    min-height: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 0px;
+
+    .content-section {
+        margin: 40px 0px;
+        padding: 0px 10px;
+
+        .main-title {
+            font-size: 1.4rem;
+        }
+    }
+
+    .img-section {
+        width: 70%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        width: 80%;
+        margin: 50px 0px;
+        padding: 0px;
+        align-items: center;
+
+        .content-section,
+        .img-section {
+            margin: 0px;
+        }
+
+        .content-section {
+            margin-right: 100px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .hide-swiper {
+        width: max-content;
+        position: fixed;
+        bottom: 120px;
+        right: 30px;
+        // bottom: 150px;
+        // right: 40px;
+        [dir= 'rtl'] &{
+            left: 40px;
+            right: auto;
+        }
+    }
+}
+
+
+
+.next-swiper,
+.prev-swiper {
+    width: 52px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: $open-nav-bg;
+    color: white;
+    padding: 0px 10px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: border-color 0.4s linear;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        height: 100%;
+    }
+    
+    svg path,
+    a{
+        transition: all 0.4s linear;
+    }
+}
+
+.next-swiper {
+    right: 0px;
+    [dir= 'rtl'] & {
+        left: 0;
+        right: auto;
+    }
+
+    a {
+        flex-direction: column-reverse;
+    }
+    .next-icon svg {
+        [dir= 'rtl'] & {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.prev-swiper {
+    left: 0px;
+    [dir= 'rtl'] & {
+        right: 0;
+        left: auto;
+    }
+
+    .prev-icon svg {
+        transform: rotate(180deg);
+        [dir= 'rtl'] & {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .next-swiper,
+    .prev-swiper {
+        width: max-content;
+        height: auto;
+        position: absolute;
+        top: auto;
+        bottom: 40px;
+        background: -webkit-gradient(linear, left top, left bottom, from($gradient-navbar), to($primary-color-dark));
+        background: linear-gradient(to top, $gradient-navbar, $primary-color-dark);
+        border-radius: 20px;
+        display: block;
+        opacity: 1;
+        border: 3px solid rgb(255 255 255);
+        padding: 0px !important;
+        box-shadow: 3px 3px 10px $btns-shadow;
+
+        a {
+            display: block;
+            color: rgb(241, 241, 241);
+            padding: 3px 20px !important;
+        }
+
+        &:hover {
+            background: white;
+            border-color: $gradient-navbar;
+
+            a {
+                color: $gradient-navbar;
+            }
+            svg path {
+                fill: $gradient-navbar;
+            }
+        }
+    }
+
+    
+    .next-swiper {
+        right: 41.8%;
+        left: auto;
+        [dir= 'rtl'] &{
+            right: 51%;
+            a{
+                padding: 3px 25px !important;
+            }
+        }
+    }
+
+    .prev-swiper {
+        left: 41.8%;
+        right: auto;
+        [dir= 'rtl'] &{
+            left: 51%;
+            right: auto;
+        }
+    }
+
+    .last-page-swiper{
+        right: 0 !important;
+        left: 0 !important;
+        margin: auto;
+    }
+}

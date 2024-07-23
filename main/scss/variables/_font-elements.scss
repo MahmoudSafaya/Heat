@@ -1,0 +1,40 @@
+// font
+
+body {
+  font-weight: normal;
+  font-family: $poppinsRG, $san-serif;
+
+  [dir='rtl'] & {
+    font-family: $almaraiRegular, $san-serif;
+  }
+}
+
+.text-bold,
+.main-title {
+  font-family: $poppinsBold, $san-serif;
+
+  [dir='rtl'] & {
+    font-family: $shamelBold, $san-serif;
+  }
+}
+
+.continue-btn,
+.next-swiper,
+.prev-swiper {
+  font-family: $poppinsBold, $san-serif;
+
+  [dir='rtl'] & {
+    font-family: $shamelMedium;
+  }
+}
+
+// style links
+.links .link .title,
+.disclaimer-container .disclaimer-footer .producted-by .title {
+  font-family: $poppinsBold, $san-serif;
+
+  [dir='rtl'] & {
+    font-family: $shamelNormal, $san-serif;
+  }
+
+}
